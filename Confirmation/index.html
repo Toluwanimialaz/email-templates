@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <style>
+      <!--LIGHT MODE-->
+      body {
+        line-height: 0% !important;
+      }
+
+      .here {
+        visibility: collapse;
+        width: 100px;
+        right: 1.5em;
+        position: absolute;
+        top: 1em;
+        height: 10px;
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      .darkMode{
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        background-color: #333;
+        height: 1024px;
+        overflow: hidden;
+        text-align: left;
+        font-size: 32px;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      .dark-mode-toggle {
+        visibility: collapse;
+        position: absolute;
+        z-index: 100;
+        top: 1em;
+        right: 1em;
+        color: var(--foreground);
+        border: 2px solid currentColor;
+        padding: 4px;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+      }
+
+      .boatcruize-logo-icon5,.boatcruize-logo-icon6,.boatcruize-logo-icon7,.darkMode2,.darkMode3.frame-root,.boatcruize-logo-icon,.boatcruize-logo-icon1,.boatcruize-logo-icon2,.hi-balogun-parent,.welcome-to-boatcruize,.boatcruize-aerodrome-estate,.confirm-email-wrapper,.frame-child,.boatcruize{
+        height: 0px;
+        width:0px;
+      }
+      .ds-boatcruize-logo-parent{
+        margin:0px !important;
+        padding: 0px !important;
+      }
+
+      .boatcruize-logo-parent,.frame-root,.darkMode2,.darkMode3{
+        visibility: collapse;
+      }
+      .ds-boatcruize-logo-icon {
+        position: absolute;
+        top: -113px;
+        left: 412px;
+        width: 1046px;
+        height: 1216px;
+        opacity:0.1
+      }
+      .ds-boatcruize-logo-icon1,
+      .ds-boatcruize-logo-icon2 {
+        position: absolute;
+        top: 198px;
+        left: 112px;
+        width: 82px;
+        height: 89px;
+      }
+      .ds-boatcruize-logo-icon2 {
+        top: 837px;
+      }
+      .ds-hi-balogun,
+      .ds-welcome-to-boatcruize {
+        position: relative;
+        line-height: 130%;
+      }
+      .ds-welcome-to-boatcruize {
+        top:-20px;
+        white-space: pre-wrap;
+        display: flex;
+        width: 1205px;
+        height: 84px;
+        flex-shrink: 0;
+        text-align: left;
+        left:-90px
+      }
+      .ds-hi-balogun-parent {
+        position: absolute;
+        top: 324px;
+        left: 123px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 23px;
+      }
+      .ds-boatcruize-aerodrome-estate {
+        position: absolute;
+        top: 750px;
+        left:120px;
+        font-size: 20px;
+        line-height: 130%;
+      }
+      .ds-confirm-email-wrapper,
+      .ds-frame-child {
+        position: absolute;
+        box-sizing: border-box;
+      }
+      .ds-confirm-email-wrapper {
+        top: 530px;
+        left:120px;
+        border-radius: 10px;
+        background-color: #323b66;
+        width: 560px;
+        height: 102px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 17px 127px;
+        color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .ds-frame-child {
+        top: 688.5px;
+        left: calc(50% - 689.5px);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        width: 1390px;
+        height: 1px;
+      }
+      .ds-boatcruize {
+        position: absolute;
+        top: 224px;
+        left: 212px;
+        line-height: 100%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .ds-boatcruize-logo-parent {
+        position: relative;
+        border-radius: 10px;
+        background-color: #fff;
+        width: 100%;
+        height: 1024px;
+        overflow: hidden;
+        text-align: left;
+        font-size: 32px;
+        color: #000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      /* phone*/
+      @media only screen and (max-width:540px){
+        .ds-boatcruize-logo-parent,.frame-root,.darkMode3,.darkMode{
+          visibility: collapse;
+          height:0px
+        }
+        
+        .here {
+          visibility: collapse;
+          width: 100px;
+          right: 1.5em;
+          position: absolute;
+          top: 1em;
+          height: 10px;
+          font-size: medium;
+          font-weight: bold;
+        }
+
+        .darkMode2{
+          position: relative;
+          border-radius: 10px;
+          background-color: #333;
+          width: 100%;
+          height: 932px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 16px;
+          color: #fff;
+          font-family: sans-serif;
+          visibility: visible;
+        }
+
+        
+
+        .darkMode,.darkMode3,.frame-root,.ds-boatcruize-logo-icon,.ds-boatcruize-logo-icon1,.ds-boatcruize-logo-icon2{
+          height: 0px;
+          width:0px;
+        }
+
+        .boatcruize-logo-parent{
+          visibility: visible;
+        }
+
+        .dark-mode-toggle2{
+          visibility: collapse;
+          position: absolute;
+          z-index: 100;
+          top: 1em;
+          right: 1em;
+          color: var(--foreground);
+          border: 2px solid currentColor;
+          padding: 4px;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        body {
+          margin: 0;
+          line-height: normal;
+        }
+
+        .boatcruize-logo-icon {
+          position: absolute;
+          top: 160px;
+          left: 97px;
+          width: 430px;
+          height: 500px;
+          opacity:0.2
+        }
+        .boatcruize-logo-icon1{
+          position: absolute;
+          top: 197px;
+          left: 21px;
+          width: 44px;
+          height: 48px;
+        }
+        .boatcruize-logo-icon2 {
+          position: absolute;
+          top: 197px;
+          left: 21px;
+          width: 44px;
+          height: 48px;
+        }
+        .boatcruize-logo-icon2 {
+          top: 609px;
+        }
+        .hi-balogun,
+        .welcome-to-boatcruize {
+          position: relative;
+          line-height: 130%;
+          display: flex;
+          align-items: center;
+          width: 387px;
+        }
+        .welcome-to-boatcruize {
+          text-align: left;
+          top:20px;
+        }
+        .hi-balogun-parent {
+          position: absolute;
+          top: 280px;
+          left: 22px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 23px;
+        }
+        .boatcruize-aerodrome-estate {
+          position: absolute;
+          top: 703px;
+          left: calc(50% - 188px);
+          line-height: 130%;
+          display: inline-block;
+          width: 139px;
+          height: 92px;
+        }
+        .confirm-email {
+          position: absolute;
+          top: 19px;
+          left: calc(50% - 65.5px);
+          line-height: 130%;
+          font-weight: 500;
+        }
+        .confirm-email-wrapper {
+          position: absolute;
+          top: 435px;
+          left: calc(50% - 193px);
+          border-radius: 10px;
+          background-color: #323b66;
+          width: 387px;
+          height: 62px;
+          overflow: hidden;
+          font-size: 20px;
+          color: #fff;
+        }
+        .frame-child {
+          position: absolute;
+          top: 552.5px;
+          left: calc(50% - 191.5px);
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+          width: 382px;
+          height: 1px;
+        }
+        .boatcruize {
+          position: absolute;
+          top: 209.2px;
+          left: 81px;
+          font-size: 23.56px;
+          line-height: 100%;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .boatcruize-logo-parent {
+          position: relative;
+          border-radius: 10px;
+          background-color: #fff;
+          width: 100%;
+          height: 932px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 16px;
+          color: #000;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+      }
+
+      /*small phone */
+
+      @media only screen and (max-width:370px){
+        .darkMode3{
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #333;
+          height: 1024px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 32px;
+          color: #fff;
+          font-family: sans-serif;
+          visibility: visible;
+        }
+
+        .here {
+          visibility: collapse;
+          width: 100px;
+          right: 1.5em;
+          position: absolute;
+          top: 1em;
+          height: 10px;
+          font-size: medium;
+          font-weight: bold;
+        }
+
+        .dark-mode-toggle3 {
+          visibility: collapse;
+          position: absolute;
+          z-index: 100;
+          top: 1em;
+          right: 1em;
+          color: var(--foreground);
+          border: 2px solid currentColor;
+          padding: 4px;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .ds-boatcruize-logo-parent,.boatcruize-logo-parent{
+          visibility: collapse;
+          height: 0px;
+        }
+        .boatcruize-aerodrome-estate2 {
+          position: absolute;
+          top: 0px;
+          left: calc(50% - 173px);
+          line-height: 130%;
+          display: inline-block;
+          width: 315px;
+          height: 34px;
+        }
+        .frame3 {
+          position: absolute;
+          top: 702px;
+          left: 22px;
+          width: 346px;
+          height: 34px;
+          overflow: hidden;
+        }
+        .boatcruize-logo-icon5 {
+          width: 44px;
+          position: relative;
+          height: 48px;
+        }
+        .boatcruize2 {
+          position: relative;
+          line-height: 100%;
+        }
+        .boatcruize-logo-container {
+          position: absolute;
+          top: 0px;
+          left: 17px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0px 16px;
+        }
+        .email-verification3 {
+          position: absolute;
+          top: 99px;
+          left: calc(50% - 244.5px);
+          font-size: 24px;
+          line-height: 130%;
+        }
+        .boatcruize-logo-icon6 {
+          position: absolute;
+          top: 0px;
+          left: 93px;
+          width: 430px;
+          height: 500px;
+          opacity: 0.1;
+        }
+        .frame6 {
+          position: absolute;
+          top: 24px;
+          left: 0px;
+          width: 523px;
+          height: 500px;
+          overflow: hidden;
+        }
+        .boatcruize-logo-icon7 {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 44px;
+          height: 48px;
+        }
+        .frame7 {
+          position: absolute;
+          top: 473px;
+          left: 17px;
+          width: 489px;
+          height: 48px;
+          overflow: hidden;
+        }
+        .hi-balogun1 {
+          width: 349px;
+          position: relative;
+          line-height: 130%;
+          display: flex;
+          align-items: center;
+        }
+        .welcome-to-boatcruize1 {
+          width: 250px;
+          position: relative;
+          line-height: 130%;
+          display: flex;
+          align-items: left;
+        }
+        .hi-balogun-parent {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 23px 0px;
+        }
+        .frame8 {
+          position: absolute;
+          top: 170px;
+          left: 18px;
+          width: 487px;
+          height: 80px;
+          overflow: hidden;
+          font-size: 15px;
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        .confirm-email1 {
+          position: absolute;
+          top: 19px;
+          left: calc(50% - 65.5px);
+          line-height: 130%;
+          font-weight: 500;
+        }
+        .confirm-email-wrapper {
+          position: absolute;
+          width: calc(100% - 180px);
+          top: 0px;
+          right: 140px;
+          left: 0px;
+          border-radius: 10px;
+          background-color: #323b66;
+          height: 62px;
+          overflow: hidden;
+        }
+        .frame9 {
+          position: absolute;
+          top: 298px;
+          left: 18px;
+          width: 487px;
+          height: 62px;
+          overflow: hidden;
+          font-size: 20px;
+          color: #fff;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .frame-child {
+          position: absolute;
+          top: 416.5px;
+          left: calc(50% - 262px);
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+          width: 382px;
+          height: 1px;
+        }
+        .frame5 {
+          position: absolute;
+          top: 0px;
+          left: 141px;
+          width: 523px;
+          height: 524px;
+          overflow: hidden;
+        }
+        .frame4 {
+          position: absolute;
+          top: 136px;
+          left: -137px;
+          width: 664px;
+          height: 524px;
+          overflow: hidden;
+          font-size: 23.6px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .frame-root {
+          visibility: visible;
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #fff;
+          height: 932px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 13px;
+          color: #000;
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--LIGHT MODE-->
+    <!--dektop-->
+    <div class="ds-boatcruize-logo-parent" id="light">
+      <div class="here">Click here</div>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <img
+        class="ds-boatcruize-logo-icon"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <img
+        class="ds-boatcruize-logo-icon1"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <img
+        class="ds-boatcruize-logo-icon2"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <div class="ds-hi-balogun-parent">
+        <div class="ds-hi-balogun">Hi Balogun,</div>
+        <div class="ds-welcome-to-boatcruize">
+          Welcome to BoatCruize! In order to get started, you need to confirm
+          your email address
+        </div>
+      </div>
+      <div class="ds-boatcruize-aerodrome-estate">
+        Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+      </div>
+      <div class="ds-confirm-email-wrapper">
+        <div class="ds-hi-balogun">Confirm email</div>
+      </div>
+      <div class="ds-frame-child"></div>
+      <div class="ds-boatcruize"><b>Boatcruize</b></div>
+    </div>
+
+    <!-- big phone-->
+    <div class="boatcruize-logo-parent" id="light2">
+      <div class="here">Click here</div>
+      <button id="dark-mode-toggle2" class="dark-mode-toggle2">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <img
+        class="boatcruize-logo-icon"
+        alt="yooo"
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <img
+        class="boatcruize-logo-icon1"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <img
+        class="boatcruize-logo-icon2"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <div class="hi-balogun-parent">
+        <div class="hi-balogun">Hi Balogun,</div>
+        <div class="welcome-to-boatcruize">
+          Welcome to BoatCruize! In order to get started, you<br/>need to confirm
+          your email address
+        </div>
+      </div>
+      <div class="boatcruize-aerodrome-estate">
+        Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+      </div>
+      <div class="confirm-email-wrapper">
+        <div class="confirm-email">Confirm email</div>
+      </div>
+      <div class="frame-child"></div>
+      <div class="boatcruize"><b>Boatcruize</b></div>
+    </div>
+
+    <!--small phone-->
+    <div class="frame-root" id="light3">
+      <div class="here">Click here</div>
+      <button id="dark-mode-toggle3" class="dark-mode-toggle3">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <div class="frame3">
+        <div class="boatcruize-aerodrome-estate2">
+          Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+        </div>
+      </div>
+      <div class="frame4">
+        <div class="frame5">
+          <div class="boatcruize-logo-container">
+            <img
+              class="boatcruize-logo-icon5"
+              alt=""
+              src="./images/boatcruize-logo@2x.png"
+            />
+
+            <div class="boatcruize2"><b>Boatcruize</b></div>
+          </div>
+          <div class="email-verification3"><b>Email verification</b></div>
+          <div class="frame6">
+            <img
+              class="boatcruize-logo-icon6"
+              alt=""
+              src="./images/boatcruize-logo@2x.png"
+            />
+          </div>
+          <div class="frame7">
+            <img
+              class="boatcruize-logo-icon7"
+              alt=""
+              src="./images/boatcruize-logo@2x.png"
+            />
+          </div>
+          <div class="frame8">
+            <div class="hi-balogun-parent">
+              <div class="hi-balogun1">Hi Balogun,</div>
+              <div class="welcome-to-boatcruize1">
+                Welcome to BoatCruize! In order to get started, you need to
+                confirm your email address
+              </div>
+            </div>
+          </div>
+          <div class="frame9">
+            <div class="confirm-email-wrapper">
+              <div class="confirm-email1">Confirm email</div>
+            </div>
+          </div>
+          <div class="frame-child"></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script>
+
+    const light = document.getElementById('light');
+    const light2 = document.getElementById('light2');
+    const light3 = document.getElementById('light3');
+
+    const button=document.getElementById('dark-mode-toggle')
+    const button2=document.getElementById('dark-mode-toggle2')
+    const button3=document.getElementById('dark-mode-toggle3')
+
+    
+
+    function enable() {
+      light.classList.remove("ds-boatcruize-logo-parent");
+
+      light.classList.add("darkMode");
+
+      button.setAttribute("dark","yes")
+    }
+
+    function enable2() {
+      light2.classList.remove("boatcruize-logo-parent");
+      light2.classList.add("darkMode2");
+
+      button2.setAttribute("dark","yes")
+    }
+
+    function enable3() {
+      light3.classList.remove("frame-root");
+      light3.classList.add("darkMode3");
+
+      button3.setAttribute("dark","yes")
+    }
+
+    function disable() {
+      light.classList.add("ds-boatcruize-logo-parent");
+      light.classList.remove("darkMode");
+      button.setAttribute("dark","no")
+    }
+
+    function disable2() {
+      light2.classList.add("boatcruize-logo-parent");
+      light2.classList.remove("darkMode2");
+      button2.setAttribute("dark","no")
+    }
+
+    function disable3() {
+      light3.classList.add("frame-root");
+      light3.classList.remove("darkMode3");
+      button3.setAttribute("dark","no")
+    }
+
+    function fireClick(event){
+      const darkCheck= event.currentTarget.getAttribute("dark");
+      const classCheck= event.currentTarget.getAttribute("class");
+      console.log(classCheck)
+      if (darkCheck !== "yes") {
+        if(classCheck==="dark-mode-toggle"){
+          enable()
+        }else if(classCheck==="dark-mode-toggle2"){
+          enable2()
+        }else{
+          enable3()
+        }
+      } else {
+        if(classCheck==="dark-mode-toggle"){
+          disable()
+        }else if(classCheck==="dark-mode-toggle2"){
+          disable2()
+        }else{
+          disable3()
+        }
+      }
+
+      console.log("after if-else block:", darkCheck)
+    }
+
+    document.getElementById('dark-mode-toggle').addEventListener("click", fireClick);
+    document.getElementById('dark-mode-toggle2').addEventListener("click", fireClick);
+    document.getElementById('dark-mode-toggle3').addEventListener("click", fireClick);
+
+    
+
+  </script>
+</html>

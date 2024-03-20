@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <style>
+      .darkMode4,.boatcruize-logo-parent,.sm-parent-frame,.boatcruize-logo-icon,.boatcruize-logo-icon1{
+        visibility: collapse;
+        height:0px; 
+      }
+
+      .tb-main-frame{
+        visibility: collapse;
+      }
+
+      .dark-mode-toggle {
+        visibility: collapse;
+        position: absolute;
+        z-index: 100;
+        top: 1em;
+        right: 1em;
+        color: var(--foreground);
+        border: 2px solid currentColor;
+        padding: 4px;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+      }
+
+      .here1 {
+        visibility: collapse;
+        width: 100px;
+        right: 1.5em;
+        position: absolute;
+        top: 1em;
+        height: 10px;
+        font-size: medium;
+        font-weight: bold;
+      }
+
+
+      .darkMode {
+        visibility: visible;
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        background-color: #333;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 126px 25px 44px 26px;
+        box-sizing: border-box;
+        gap: 337px 0px;
+        letter-spacing: normal;
+        text-align: left;
+        font-size: 32px;
+        color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        line-height: normal;
+      }
+      .ds-boatcruize {
+        position: relative;
+        line-height: 100%;
+      }
+      .ds-boatcruize-wrapper {
+        width: 370px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      .ds-your-trip-has {
+        margin: 0;
+        align-self: stretch;
+        height: 124px;
+        position: relative;
+        font-size: 48px;
+        line-height: 130%;
+        font-weight: 400;
+        font-family: inherit;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+      }
+      .ds-logo-container {
+        width: 1062px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 57px 0px;
+        max-width: 100%;
+      }
+      .ds-inner-frame {
+        width: 1141px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 100%;
+      }
+      .ds-boatcruize-logo-icon {
+        height: 120%;
+        width: 70%;
+        position: absolute;
+        left: 500px;
+        top: -117px;
+        opacity: 0.1;
+      }
+      .ds-rapper-boatcruize-logo {
+        position: absolute;
+        height: 100%;
+        top: 0px;
+        bottom: 0px;
+        left: 452px;
+        width: 1046px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ds-boatcruize-logo-icon1 {
+        position: absolute;
+        top: 897px;
+        left: 40px;
+        width: 82px;
+        height: 89px;
+        
+      }
+      .ds-boatcruize-logo-icon2 {
+        position: absolute;
+        top: 98px;
+        left: 40px;
+        width: 82px;
+        height: 89px;
+      }
+      .ds-separator-line-child {
+        position: absolute;
+        top: 371px;
+        left: 90px;
+        border-radius: 18.34px;
+        width: 482.9px;
+        height: 272.6px;
+        z-index: 1;
+      }
+      .ds-separator-line {
+        width: 1498px;
+        height: 100%;
+        position: absolute;
+        margin: 0 !important;
+        top: 0px;
+        right: -208px;
+        bottom: 0px;
+      }
+      .ds-trip-details {
+        position: relative;
+        line-height: 130%;
+      }
+      .ds-starttime {
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        flex-shrink: 0;
+      }
+      .ds-endtime {
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        flex-shrink: 0;
+      }
+      .ds-duration {
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+      }
+      .ds-starttime-parent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1px 0px;
+      }
+      .dk-div {
+        position: relative;
+        line-height: 130%;
+        white-space: nowrap;
+      }
+      .ds-div1 {
+        position: relative;
+        line-height: 130%;
+        white-space: nowrap;
+      }
+      .ds-hours {
+        position: relative;
+        line-height: 130%;
+      }
+      .ds-parent {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1px 0px;
+      }
+      .ds-boat-cruise-logo-text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0px 14px;
+      }
+      .ds-no-of-invitees {
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        z-index: 1;
+      }
+      .ds-invitee-count {
+        position: relative;
+        line-height: 130%;
+        z-index: 1;
+      }
+      .ds-footer-text {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0px 10px;
+      }
+      .ds-invitees-frame {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .ds-trip-details-parent {
+        width: 318px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 9px 0px;
+      }
+      .ds-trip-details-frame-inner {
+        width: 1135px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 100%;
+      }
+      .ds-message-frame {
+        height: 1px;
+        flex: 1;
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        max-width: 100%;
+        z-index: 1;
+      }
+      .ds-line-separator {
+        align-self: stretch;
+        height: 9px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px 9px;
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      .ds-thanks-for-cruizing-container {
+        position: relative;
+        line-height: 130%;
+        display: inline-block;
+        max-width: 100%;
+        z-index: 1;
+      }
+      .ds-boatcruize-aerodrome-estate {
+        position: relative;
+        font-size: 18.3px;
+        line-height: 130%;
+        z-index: 1;
+      }
+      .ds-thanks-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 11px 0px;
+        max-width: 100%;
+        font-size: 32px;
+      }
+      .ds-trip-details-frame {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 26px 0px;
+        max-width: 100%;
+        text-align: left;
+        font-size: 24px;
+        color:inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .ds-main-frame {
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 126px 25px 44px 26px;
+        box-sizing: border-box;
+        gap: 337px 0px;
+        letter-spacing: normal;
+        text-align: left;
+        font-size: 32px;
+        color: #000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+     
+
+      @media only screen and (max-width:540px){
+        .boatcruize-logo-parent{
+          visibility: visible;
+        }
+
+        .dark-mode-toggle2 {
+          visibility: collapse;
+          position: absolute;
+          z-index: 100;
+          top: 1em;
+          right: 1em;
+          color: var(--foreground);
+          border: 2px solid currentColor;
+          padding: 4px;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .here2 {
+          visibility: collapse;
+          width: 100px;
+          right: 1.5em;
+          position: absolute;
+          top: 1em;
+          height: 10px;
+          font-size: medium;
+          font-weight: bold;
+        }
+
+
+        #dark-mode-toggle4,.here4,.ds-main-frame,.sm-parent-frame,.ds-boatcruize-logo-icon,.ds-boatcruize-logo-icon1,.ds-boatcruize-logo-icon2{
+          visibility: collapse;
+          height:0px
+        }
+
+        .tb-main-frame-inner,.tb-main-frame,.tb-start-time-end-time,.tb-parent-frame-logo,.tb-parent-frame-logo{
+          visibility: collapse;
+          height:0px;
+        }
+
+        .dark-mode-toggle4{
+          visibility: collapse;
+          
+        }
+
+        .darkMode2 {
+          height: 100%;
+          visibility: visible;
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #333;
+          height: 932px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 16px;
+          color: #fff;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .boatcruize-logo-icon {
+          position: absolute;
+          top: 103px;
+          left: -58px;
+          width: 647px;
+          height: 706px;
+          opacity: 0.1;
+          visibility: visible;
+        }
+        .boatcruize-logo-icon1 {
+          position: absolute;
+          top: 143px;
+          left: 18px;
+          width: 44px;
+          height: 48px;
+          visibility: visible;
+        }
+        .boatcruize,
+        .your-trip-has {
+          position: absolute;
+          line-height: 130%;
+        }
+        .boatcruize {
+          top: 155px;
+          left: calc(50% - 146px);
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .your-trip-has {
+          top: 222px;
+          left: calc(50% - 197px);
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          width: 395px;
+        }
+        .cruizing,
+        .your-trip-has {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .thanks-for-cruizing-container {
+          position: absolute;
+          top: 756px;
+          left: calc(50% - 123px);
+          font-size: 20px;
+          line-height: 130%;
+        }
+        .frame-child {
+          position: absolute;
+          top: 546.5px;
+          left: calc(50% - 190.5px);
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+          width: 382px;
+          height: 1px;
+        }
+        
+        
+        .frame-item {
+          position: absolute;
+          top: 294px;
+          left: calc(50% - 197px);
+          border-radius: 15px;
+          width: 395px;
+          height: 223px;
+          object-fit: cover;
+        }
+        .text {
+          position: absolute;
+          top: 734px;
+          left: 430px;
+          line-height: 130%;
+          color: inherit;
+          white-space: pre-wrap;
+        }
+        .boatcruize-aerodrome-estate {
+          position: absolute;
+          top: 817px;
+          left: calc(50% - 190px);
+          line-height: 130%;
+          display: flex;
+          align-items: center;
+          width: 381px;
+        }
+        .endtime,
+        .starttime,
+        .trip-details1 {
+          position: absolute;
+          top: 9px;
+          left: calc(50% - 198px);
+          line-height: 130%;
+        }
+        .endtime,
+        .starttime {
+          top: 44px;
+          white-space: pre-wrap;
+        }
+        .endtime {
+          top: 72px;
+        }
+        .div,
+        .div1,
+        .div2,
+        .duration,
+        .hours,
+        .no-of-invitees {
+          position: absolute;
+          top: 44px;
+          left: calc(50% - 85px);
+          line-height: 130%;
+        }
+        .div1,
+        .div2,
+        .duration,
+        .hours,
+        .no-of-invitees {
+          top: 72px;
+        }
+        .div2,
+        .duration,
+        .hours,
+        .no-of-invitees {
+          top: 100px;
+        }
+        .div2,
+        .duration,
+        .no-of-invitees {
+          top: 129px;
+        }
+        .duration,
+        .no-of-invitees {
+          top: 100px;
+          left: calc(50% - 198px);
+          white-space: pre-wrap;
+        }
+        .no-of-invitees {
+          top: 127px;
+        }
+        .trip-details {
+          position: absolute;
+          top: 577px;
+          left: 17px;
+          width: 396px;
+          height: 165px;
+          overflow: hidden;
+        }
+        .boatcruize-logo-parent {
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #fff;
+          height: 932px;
+          overflow: hidden;
+          text-align: left;
+          font-size: 16px;
+          color: #000;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+      }
+      
+      @media only screen and (max-width:390px){
+        .sm-parent-frame{
+          visibility: visible;
+          height: 1000px;
+        }
+
+        .dark-mode-toggle3 {
+          visibility: collapse;
+          position: absolute;
+          z-index: 100;
+          top: 1em;
+          right: 1em;
+          color: var(--foreground);
+          border: 2px solid currentColor;
+          padding: 4px;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .here3 {
+          visibility: collapse;
+          width: 100px;
+          right: 1.5em;
+          position: absolute;
+          top: 1em;
+          height: 10px;
+          font-size: medium;
+          font-weight: bold;
+        }
+
+
+        .dark-mode-toggle4,.darkMode,.darkMode4,.boatcruize-logo-parent,.ds-main-frame,.ds-boatcruize-logo-icon,.ds-boatcruize-logo-icon1,.ds-boatcruize-logo-icon2,.boatcruize-logo-icon,.boatcruize-logo-icon1{
+          visibility: collapse;
+          height:0px
+        }
+
+        .darkMode3 {
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #333;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start;
+          padding: 12px 0px 79px 5px;
+          box-sizing: border-box;
+          gap: 107px 0px;
+          color:#fff;
+          visibility: visible;
+        }
+
+        body {
+        margin: 0;
+        line-height: normal;
+        }
+        .sm-instance-frame {
+          flex: 1;
+          position: relative;
+          letter-spacing: -0.41px;
+          line-height: 22px;
+        }
+
+        .sm-child-frame {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: flex-start;
+          padding: 0px 1px 0px 0px;
+          gap: 0px 7px;
+        }
+        .sm-child-text-frame {
+          width: 411px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .sm-child-logo-frame {
+          align-self: stretch;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 0px 0px 0px;
+          text-align: center;
+          font-size: 17px;
+          color:inherit;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .sm-boatcruize-logo-icon {
+          width: 100%;
+          height: 587px;
+          position: absolute;
+          margin: 0 !important;
+          right: 0px;
+          bottom: 0px;
+          left: 0px;
+          max-width: 100%;
+          overflow: hidden;
+          flex-shrink: 0;
+          object-fit: cover;
+          opacity: 0.1;
+        }
+        .sm-boatcruize-logo-icon1 {
+          width: 44px;
+          height: 48px;
+          position: absolute;
+          margin: 0 !important;
+          top: -13px;
+          left: 0px;
+          z-index: 1;
+        }
+        .sm-boatcruize {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-your-trip-has {
+          width: 360px;
+          position: absolute;
+          margin: 0 !important;
+          top: 66px;
+          left: -17px;
+          font-size: 20px;
+          line-height: 130%;
+          display: flex;
+          align-items: center;
+          z-index: 1;
+        }
+        .sm-child-rectangle-icon {
+          width: 351px;
+          height: 199px;
+          position: absolute;
+          margin: 0 !important;
+          top: 158px;
+          left: -19px;
+          border-radius: 10px;
+          object-fit: cover;
+          z-index: 1;
+        }
+        .sm-trip-details {
+          position: absolute;
+          margin: 0 !important;
+          bottom: 160px;
+          left: -19px;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-starttime {
+          position: absolute;
+          margin: 0 !important;
+          bottom: 125px;
+          left: -19px;
+          line-height: 130%;
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+        .sm-endtime {
+          position: absolute;
+          margin: 0 !important;
+          bottom: 97px;
+          left: -19px;
+          line-height: 130%;
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+        .sm-line-node {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-line-node1 {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-hours {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-line-node2 {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .sm-hour-text-node {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 7px 0px;
+        }
+        .sm-child-hours-frame {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 70px;
+        }
+        .sm-duration {
+          position: absolute;
+          margin: 0 !important;
+          bottom: 69px;
+          left: -19px;
+          line-height: 130%;
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+        .sm-no-of-invitees {
+          position: absolute;
+          margin: 0 !important;
+          bottom: 42px;
+          left: -19px;
+          line-height: 130%;
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+        .sm-frame-with-logo-and-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 62px 40px 24px;
+          position: relative;
+          gap: 421px 0px;
+        }
+        .sm-child-text-frame1 {
+          height: 1px;
+          flex: 1;
+          position: relative;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+        }
+        .sm-parent-frame-for-line {
+          align-self: stretch;
+          height: 0px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 3px 0px 0px;
+          box-sizing: border-box;
+        }
+        .sm-child-frame1 {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start;
+          text-align: left;
+          font-size: 16px;
+          color: inherit;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .sm-logo-rectangle {
+          width: 20px;
+          height: 21px;
+          position: relative;
+          line-height: 130%;
+          white-space: pre-wrap;
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          padding-left: 20px;
+        }
+        .sm-boatcruize-logo-icon2 {
+          height: 38px;
+          width: 34px;
+          position: relative;
+        }
+        .sm-thanks-for-cruizing-container {
+          position: relative;
+          line-height: 130%;
+          color: inherit;
+        }
+        .sm-your-trip-message {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0px 20px 0px 0px;
+          gap: 0px 19px;
+        }
+        .sm-trip-details-frame {
+          align-self: stretch;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          font-size: 20px;
+          color: inherit;
+        }
+        .sm-thank-you-frame {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start;
+          gap: 6px 0px;
+        }
+        .sm-boatcruize-aerodrome-estate {
+          flex: 1;
+          position: relative;
+          line-height: 130%;
+          color: inherit;
+        }
+        .sm-aerodrome-suite-label {
+          width: 344px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 2px;
+          box-sizing: border-box;
+          font-size: 14px;
+          color: inherit;
+          font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .sm-text-frame {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 0px 0px 14px;
+          gap: 20px 0px;
+          text-align: left;
+          font-size: 16px;
+          color: inherit;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .sm-parent-logo-and-details-frame {
+          color:inherit;
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start;
+          gap: 6px 0px;
+        }
+        .sm-parent-frame {
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #fff;
+          color:#000;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start;
+          padding: 12px 0px 79px 5px;
+          box-sizing: border-box;
+          gap: 107px 0px;
+        }
+      }
+
+      @media only screen and (max-width:1000px){
+        body {
+          margin: 0;
+          line-height: normal;
+        }
+
+        .dark-mode-toggle4 {
+          visibility: collapse;
+          position: absolute;
+          z-index: 100;
+          top: 1em;
+          right: 1em;
+          color: var(--foreground);
+          border: 2px solid currentColor;
+          padding: 4px;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .here4 {
+          visibility: collapse;
+          width: 100px;
+          right: 1.5em;
+          position: absolute;
+          top: 1em;
+          height: 10px;
+          font-size: medium;
+          font-weight: bold;
+        }
+
+
+        .darkMode4 {
+          visibility: visible;
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #333;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 126px 25px 44px 26px;
+          box-sizing: border-box;
+          gap: 337px 0px;
+          letter-spacing: normal;
+          text-align: left;
+          font-size: 32px;
+          color: #fff;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          visibility: visible;
+          height: 1000px;
+
+        }
+
+
+        .ds-main-frame,.darkMode{
+          visibility: collapse;
+        }
+
+        .tb-boatcruize {
+          position: relative;
+          line-height: 100%;
+        }
+        .tb-boatcruize-wrapper {
+          width: 370px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          padding: 0px 20px;
+          box-sizing: border-box;
+          max-width: 100%;
+        }
+        .tb-your-trip-has {
+          margin: 0;
+          align-self: stretch;
+          height: 124px;
+          position: relative;
+          font-size: 48px;
+          line-height: 130%;
+          font-weight: 400;
+          font-family: inherit;
+          color: inherit;
+          display: flex;
+          align-items: center;
+          z-index: 1;
+        }
+        .tb-frame-parent {
+          width: 1062px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 57px 0px;
+          max-width: 100%;
+        }
+        .tb-main-frame-inner {
+          width: 1141px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          max-width: 100%;
+        }
+        .tb-boatcruize-logo-icon {
+          height: 100%;
+          max-height: 100%;
+          width: 100%;
+          object-fit: contain;
+          position: absolute;
+          left: 0px;
+          top: 57px;
+          transform: scale(1.11);
+          opacity: 0.1;
+        }
+        .tb-wrapper-boatcruize-logo {
+          position: absolute;
+          height: 100%;
+          top: 0px;
+          bottom: 0px;
+          left: 452px;
+          width: 1046px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .tb-boatcruize-logo-icon1 {
+          position: absolute;
+          top: 897px;
+          left: 500px;
+          width: 82px;
+          height: 89px;
+        }
+        .tb-boatcruize-logo-icon2 {
+          position: absolute;
+          top: 98px;
+          left: 500px;
+          width: 82px;
+          height: 89px;
+          object-fit: cover;
+        }
+        .tb-content-frame-icon {
+          position: absolute;
+          top: 371px;
+          left: 560px;
+          border-radius: 18.34px;
+          width: 482.9px;
+          height: 272.6px;
+          object-fit: cover;
+          z-index: 1;
+        }
+        .tb-parent-frame-logo {
+          width: 1498px;
+          height: 100%;
+          position: absolute;
+          margin: 0 !important;
+          top: 0px;
+          right: -208px;
+          bottom: 0px;
+        }
+        .tb-trip-details {
+          position: relative;
+          line-height: 130%;
+        }
+        .tb-starttime {
+          position: relative;
+          line-height: 130%;
+          white-space: pre-wrap;
+          flex-shrink: 0;
+        }
+        .tb-endtime {
+          position: relative;
+          line-height: 130%;
+          white-space: pre-wrap;
+          flex-shrink: 0;
+        }
+        .tb-duration {
+          position: relative;
+          line-height: 130%;
+          white-space: pre-wrap;
+        }
+        .tb-time-frame {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 1px 0px;
+        }
+        .tb-div {
+          position: relative;
+          line-height: 130%;
+          white-space: nowrap;
+        }
+        .tb-div1 {
+          position: relative;
+          line-height: 130%;
+          white-space: nowrap;
+        }
+        .tb-hours {
+          position: relative;
+          line-height: 130%;
+        }
+        .tb-time-frame1 {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 1px 0px;
+        }
+        .tb-line-separator {
+          align-self: stretch;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 0px 14px;
+        }
+        .tb-no-of-invitees {
+          position: relative;
+          line-height: 130%;
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+        .tb-invitees-count {
+          position: relative;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .tb-thanks-message {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 0px 10px;
+        }
+        .tb-invitees-label {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+        .tb-trip-details-parent {
+          width: 318px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 9px 0px;
+        }
+        .tb-parent-frame-details {
+          width: 1135px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          max-width: 100%;
+        }
+        .tb-frame-message {
+          height: 1px;
+          flex: 1;
+          position: relative;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          box-sizing: border-box;
+          max-width: 100%;
+          z-index: 1;
+        }
+        .tb-divider-line {
+          align-self: stretch;
+          height: 9px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 0px 0px 9px;
+          box-sizing: border-box;
+          max-width: 100%;
+        }
+        .tb-thanks-for-cruizing-container {
+          position: relative;
+          line-height: 130%;
+          display: inline-block;
+          max-width: 100%;
+          z-index: 1;
+        }
+        .tb-boatcruize-aerodrome-estate {
+          position: relative;
+          font-size: 18.3px;
+          line-height: 130%;
+          z-index: 1;
+        }
+        .tb-success-msg {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 11px 0px;
+          max-width: 100%;
+          font-size: 32px;
+        }
+        .tb-start-time-end-time {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 26px 0px;
+          max-width: 100%;
+          text-align: left;
+          font-size: 24px;
+          color: inherit;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .tb-main-frame {
+          width: 100%;
+          position: relative;
+          border-radius: 10px;
+          background-color: #fff;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 126px 25px 44px 26px;
+          box-sizing: border-box;
+          gap: 337px 0px;
+          letter-spacing: normal;
+          text-align: left;
+          font-size: 32px;
+          color: #000;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          visibility: visible;
+          height: 1000px;
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!--Desktop-->
+    <div class="ds-main-frame" id="light">
+      <div class="here1">Click here</div>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <div class="ds-inner-frame">
+        <div class="ds-logo-container">
+          <div class="ds-boatcruize-wrapper">
+            <div class="ds-boatcruize"><b>Boatcruize</b></div>
+          </div>
+          <h1 class="ds-your-trip-has">
+            Your trip has been successfully booked,</br> Balogun Tobi
+          </h1>
+        </div>
+      </div>
+      <main class="ds-separator-line">
+        <div class="ds-wrapper-boatcruize-logo">
+          <img
+            class="ds-boatcruize-logo-icon"
+            alt=""
+            src="./images/boatcruize-logo@2x.png"
+          />
+        </div>
+        <img
+          class="ds-boatcruize-logo-icon1"
+          loading="eager"
+          alt=""
+          src="./images/boatcruize-logo@2x.png"
+        />
+
+        <img
+          class="ds-boatcruize-logo-icon2"
+          loading="eager"
+          alt=""
+          src="./images/boatcruize-logo@2x.png"
+        />
+
+        <img
+          class="ds-separator-line-child"
+          alt=""
+          src="./images/rectangle-2@2x.png"
+        />
+      </main>
+      <footer class="ds-trip-details-frame">
+        <div class="ds-trip-details-frame-inner">
+          <div class="ds-trip-details-parent">
+            <div class="ds-trip-details">Trip details:</div>
+            <div class="ds-invitees-frame">
+              <div class="ds-boat-cruise-logo-text">
+                <div class="ds-starttime-parent">
+                  <div class="ds-starttime">StartTime:</div>
+                  <div class="ds-endtime">EndTime:</div>
+                  <div class="ds-duration">Duration:</div>
+                </div>
+                <div class="ds-parent">
+                  <div class="ds-div">2024-01-05 15:00</div>
+                  <div class="ds-div1">2024-01-05 17:00</div>
+                  <div class="ds-hours">2 hours</div>
+                </div>
+              </div>
+              <div class="ds-footer-text">
+                <div class="ds-no-of-invitees">No. of Invitees:</div>
+                <div class="ds-invitee-count">5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-line-separator">
+          <div class="ds-message-frame"></div>
+        </div>
+        <div class="ds-thanks-frame">
+          <div class="ds-thanks-for-cruizing-container">
+            <span>Thanks for </span>
+            <span><b>cruizing</b></span>
+            <span> with us</span>
+          </div>
+          <div class="ds-boatcruize-aerodrome-estate">
+            Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+
+
+    <!--Big phone-->
+    <div class="boatcruize-logo-parent" id="light2">
+      <div class="here2">Click here</div>
+      <button id="dark-mode-toggle2" class="dark-mode-toggle2">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <img
+        class="boatcruize-logo-icon"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <img
+        class="boatcruize-logo-icon1"
+        alt=""
+        src="./images/boatcruize-logo@2x.png"
+      />
+
+      <div class="boatcruize"><b>BoatCruize</b></div>
+      <div class="your-trip-has">
+        <b>
+        Your trip has been successfully booked,</br> Balogun Tobi
+        </b>
+      </div>
+      <div class="thanks-for-cruizing-container">
+        <span>Thanks for </span>
+        <span class="cruizing"><b>cruizing</b></span>
+        <span> with us</span>
+      </div>
+      <div class="frame-child"></div>
+      <img class="frame-item" alt="" src="./images/rectangle-2@2x.png" />
+
+      <div class="text"></div>
+      <div class="boatcruize-aerodrome-estate">
+        Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+      </div>
+      <div class="trip-details">
+        <div class="trip-details1">Trip details:</div>
+        <div class="starttime">StartTime:</div>
+        <div class="endtime">EndTime:</div>
+        <div class="div">2024-01-05 15:00</div>
+        <div class="div1">2024-01-05 17:00</div>
+        <div class="hours">2 hours</div>
+        <div class="div2">5</div>
+        <div class="duration">Duration:</div>
+        <div class="no-of-invitees">No. of Invitees</div>
+      </div>
+    </div>
+
+
+
+    <!--Small phone-->
+    <div class="sm-parent-frame" id="light3">
+      <div class="here3">Click here</div>
+      <button id="dark-mode-toggle3" class="dark-mode-toggle3">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <header class="sm-child-logo-frame">
+      </header>
+      <main class="sm-parent-logo-and-details-frame">
+        <section class="sm-child-frame1">
+          <div class="sm-frame-with-logo-and-text">
+            <img
+              class="sm-boatcruize-logo-icon"
+              alt=""
+              src="./images/boatcruize-logo@2x.png"
+            />
+
+            <img
+              class="sm-boatcruize-logo-icon1"
+              alt=""
+              src="./images/boatcruize-logo@2x.png"
+            />
+
+            <div class="sm-boatcruize"><b>Boatcruize</b></div>
+            <div class="sm-your-trip-has"><b>
+              Your trip has been successfully booked,</br>Balogun Tobi
+            </b></div>
+            <img
+              class="sm-child-rectangle-icon"
+              alt=""
+              src="./images/rectangle-2@2x.png"
+            />
+
+            <div class="sm-trip-details">Trip details:</div>
+            <div class="sm-starttime">StartTime:</div>
+            <div class="sm-endtime">EndTime:</div>
+            <div class="sm-child-hours-frame">
+              <div class="sm-hour-text-node">
+                <div class="sm-line-node">2024-01-05 15:00</div>
+                <div class="sm-line-node1">2024-01-05 17:00</div>
+                <div class="sm-hours">2 hours</div>
+                <div class="sm-line-node2">5</div>
+              </div>
+            </div>
+            <div class="sm-duration">Duration:</div>
+            <div class="sm-no-of-invitees">No. of Invitees</div>
+          </div>
+          <div class="sm-parent-frame-for-line">
+            <div class="sm-child-text-frame1"></div>
+          </div>
+        </section>
+        <section class="sm-text-frame">
+          <div class="sm-thank-you-frame">
+            <div class="sm-logo-rectangle"></div>
+            <div class="sm-trip-details-frame">
+              <div class="sm-your-trip-message">
+                <img
+                  class="sm-boatcruize-logo-icon2"
+                  alt=""
+                  src="./images/boatcruize-logo@2x.png"
+                />
+
+                <div class="sm-thanks-for-cruizing-container">
+                  <span>Thanks for </span>
+                  <span><b>cruizing</b></span>
+                  <span> with us</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sm-aerodrome-suite-label">
+            <div class="sm-boatcruize-aerodrome-estate">
+              Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+
+
+
+    <!--Tablet-->
+    <div class="tb-main-frame" id="light4">
+      <div class="here4">Click here</div>
+      <button id="dark-mode-toggle4" class="dark-mode-toggle4">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <div class="tb-main-frame-inner">
+        <div class="tb-frame-parent">
+          <div class="tb-boatcruize-wrapper">
+            <div class="tb-boatcruize"><b>Boatcruize</b></div>
+          </div>
+          <h1 class="tb-your-trip-has"><b>
+            Your trip has been successfully booked, Balogun Tobi
+          </b></h1>
+        </div>
+      </div>
+      <main class="tb-parent-frame-logo">
+        <div class="tb-wrapper-boatcruize-logo">
+          <img
+            class="tb-boatcruize-logo-icon"
+            alt=""
+            src="./images/boatcruize-logo@2x.png"
+          />
+        </div>
+        <img
+          class="tb-boatcruize-logo-icon1"
+
+          alt=""
+          src="./images/boatcruize-logo1@2x.png"
+        />
+
+        <img
+          class="tb-boatcruize-logo-icon2"
+          alt=""
+          src="./images/boatcruize-logo1@2x.png"
+        />
+
+        <img
+          class="tb-content-frame-icon"
+          alt=""
+          src="./images/rectangle-2@2x.png"
+        />
+      </main>
+      <footer class="tb-start-time-end-time">
+        <div class="tb-parent-frame-details">
+          <div class="tb-trip-details-parent">
+            <div class="tb-trip-details">Trip details:</div>
+            <div class="tb-invitees-label">
+              <div class="tb-line-separator">
+                <div class="tb-time-frame">
+                  <div class="tb-starttime">StartTime:</div>
+                  <div class="tb-endtime">EndTime:</div>
+                  <div class="tb-duration">Duration:</div>
+                </div>
+                <div class="tb-time-frame1">
+                  <div class="tb-div">2024-01-05 15:00</div>
+                  <div class="tb-div1">2024-01-05 17:00</div>
+                  <div class="tb-hours">2 hours</div>
+                </div>
+              </div>
+              <div class="tb-thanks-message">
+                <div class="tb-no-of-invitees">No. of Invitees:</div>
+                <div class="tb-invitees-count">5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tb-divider-line">
+          <div class="tb-frame-message"></div>
+        </div>
+        <div class="tb-success-msg">
+          <div class="tb-thanks-for-cruizing-container">
+            <span>Thanks for </span>
+            <span><b>cruizing</b></span>
+            <span> with us</span>
+          </div>
+          <div class="tb-boatcruize-aerodrome-estate">
+            Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    const light = document.getElementById('light');
+    const light2 = document.getElementById('light2');
+    const light3 = document.getElementById('light3');
+    const light4 = document.getElementById('light4');
+
+
+    const button=document.getElementById('dark-mode-toggle')
+    const button2=document.getElementById('dark-mode-toggle2')
+    const button3=document.getElementById('dark-mode-toggle3')
+    const button4=document.getElementById('dark-mode-toggle4')
+
+
+    
+
+    function enable() {
+      light.classList.remove("ds-main-frame");
+
+      light.classList.add("darkMode");
+
+      button.setAttribute("dark","yes")
+    }
+
+    function enable2() {
+      light2.classList.remove("boatcruize-logo-parent");
+      light2.classList.add("darkMode2");
+
+      button2.setAttribute("dark","yes")
+    }
+
+    function enable3() {
+      light3.classList.remove("sm-parent-frame");
+      light3.classList.add("darkMode3");
+
+      button3.setAttribute("dark","yes")
+    }
+
+    function enable4() {
+      light4.classList.remove("tb-main-frame");
+      light4.classList.add("darkMode4");
+
+      button4.setAttribute("dark","yes")
+    }
+
+    function disable() {
+      light.classList.add("ds-main-frame");
+      light.classList.remove("darkMode");
+      button.setAttribute("dark","no")
+    }
+
+    function disable2() {
+      light2.classList.add("boatcruize-logo-parent");
+      light2.classList.remove("darkMode2");
+      button2.setAttribute("dark","no")
+    }
+
+    function disable3() {
+      light3.classList.add("sm-parent-frame");
+      light3.classList.remove("darkMode3");
+      button3.setAttribute("dark","no")
+    }
+
+    function disable4() {
+      light4.classList.add("tb-main-frame");
+      light4.classList.remove("darkMode4");
+      button4.setAttribute("dark","no")
+    }
+
+    function fireClick(event){
+      const darkCheck= event.currentTarget.getAttribute("dark");
+      const classCheck= event.currentTarget.getAttribute("class");
+      console.log(classCheck)
+      if (darkCheck !== "yes") {
+        if(classCheck==="dark-mode-toggle"){
+          enable()
+        }else if(classCheck==="dark-mode-toggle2"){
+          enable2()
+        }else if(classCheck==="dark-mode-toggle3"){
+          enable3()
+        }else{
+          enable4()
+        }
+      } else {
+        if(classCheck==="dark-mode-toggle"){
+          disable()
+        }else if(classCheck==="dark-mode-toggle2"){
+          disable2()
+        }else if(classCheck==="dark-mode-toggle3"){
+          disable3()
+        }else{
+          disable4()
+        }
+      }
+
+      console.log("after if-else block:", darkCheck)
+    }
+
+    document.getElementById('dark-mode-toggle').addEventListener("click", fireClick);
+    document.getElementById('dark-mode-toggle2').addEventListener("click", fireClick);
+    document.getElementById('dark-mode-toggle3').addEventListener("click", fireClick);
+    document.getElementById('dark-mode-toggle4').addEventListener("click", fireClick);
+
+  </script>
+</html>

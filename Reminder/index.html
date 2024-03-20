@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <style>
+      .dark-mode-toggle {
+        visibility: collapse;
+        position: absolute;
+        z-index: 100;
+        top: 1em;
+        right: 1em;
+        color: var(--foreground);
+        border: 2px solid currentColor;
+        padding: 4px;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+      }
+
+      .here {
+        visibility: collapse;
+        color:inherit;
+        width: 100px;
+        right: 1.5em;
+        position: absolute;
+        top: 1em;
+        height: 10px;
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      .boatcruize-logo-icon {
+        opacity: 0.1;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        position: absolute;
+        left: 0px;
+        top: 32px;
+        transform: scale(1.11);
+      }
+      .wrapper-boatcruize-logo {
+        width: 1046px;
+        height: 100%;
+        position: absolute;
+        margin: 0 !important;
+        top: 0px;
+        right: -208px;
+        bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+      }
+      .boatcruize-logo-icon1 {
+        height: 89px;
+        width: 82px;
+        position: relative;
+        object-fit: cover;
+      }
+      .boatcruize {
+        position: relative;
+        line-height: 100%;
+        color:inherit
+      }
+      .details-frame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0px 18px;
+      }
+      .reminder {
+        color:inherit;
+        margin: 0;
+        width: 274px;
+        position: relative;
+        font-size: 48px;
+        line-height: 130%;
+        font-weight: 400;
+        font-family: inherit;
+        display: inline-block;
+      }
+      .label-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 35px 0px;
+      }
+      .label-frame-wrapper {
+        width: 1173px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 100%;
+        text-align: left;
+        font-size: 32px;
+        color:inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .hi-balogun-tobi {
+        color:inherit;
+        height: 62px;
+        width: 958px;
+        position: relative;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        max-width: 100%;
+        z-index: 1;
+      }
+      .info-frame {
+        width: 1173px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px 24px 0px;
+        box-sizing: border-box;
+        max-width: 100%;
+        text-align: left;
+        font-size: 24px;
+        color: inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .boat-owners-details {
+        position: relative;
+        line-height: 130%;
+      }
+      .name {
+        position: relative;
+        line-height: 130%;
+      }
+      .contact {
+        position: relative;
+        line-height: 130%;
+      }
+      .boat {
+        width: 57px;
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        display: flex;
+        align-items: center;
+      }
+      .boat-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        min-width: 97px;
+      }
+      .owners-name {
+        position: relative;
+        line-height: 130%;
+      }
+      .div {
+        position: relative;
+        line-height: 130%;
+      }
+      .boat-name {
+        position: relative;
+        line-height: 130%;
+      }
+      .boat-frame1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        min-width: 163px;
+      }
+      .contact-frame {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .name-contact-frame {
+        color:inherit;
+        width: 349px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        max-width: 100%;
+      }
+      .name-contact-frame-wrapper {
+        width: 1173px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px 24px 0px;
+        box-sizing: border-box;
+        max-width: 100%;
+        text-align: left;
+        font-size: 24px;
+        color: inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .trip-details {
+        width: 162px;
+        position: relative;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+      }
+      .starttime {
+        width: 144px;
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        display: flex;
+        align-items: center;
+      }
+      .endtime {
+        width: 128px;
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        display: flex;
+        align-items: center;
+      }
+      .duration {
+        width: 126px;
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+        display: flex;
+        align-items: center;
+      }
+      .no-of-invitees {
+        align-self: stretch;
+        position: relative;
+        line-height: 130%;
+        white-space: pre-wrap;
+      }
+      .start-end-duration-frame {
+        width: 193px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        min-width: 193px;
+      }
+      .hrs-display {
+        position: relative;
+        line-height: 130%;
+        white-space: nowrap;
+      }
+      .hrs-display1 {
+        align-self: stretch;
+        position: relative;
+        line-height: 130%;
+        white-space: nowrap;
+      }
+      .hours {
+        width: 100px;
+        position: relative;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+      }
+      .boatcruize-reminder {
+        position: relative;
+        line-height: 130%;
+        z-index: 1;
+      }
+      .empty-frame {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 3px;
+      }
+      .hours-frame {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        min-width: 151px;
+        margin-left: -7px;
+      }
+      .trip-details-frame {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        row-gap: 20px;
+      }
+      .line-frame {
+        color:inherit;
+        width: 418px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px 0px;
+        max-width: 100%;
+      }
+      .line-frame-wrapper {
+        width: 1173px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px 17px 0px;
+        box-sizing: border-box;
+        max-width: 100%;
+        text-align: left;
+        font-size: 24px;
+        color:inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .owner-details-frame {
+        align-self: stretch;
+        height: 1px;
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        z-index: 1;
+      }
+      .boatcruize-logo-icon2 {
+        align-self: stretch;
+        flex: 1;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        object-fit: cover;
+      }
+      .thanks-frame {
+        height: 92px;
+        width: 82px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 0px 3px;
+        box-sizing: border-box;
+      }
+      .thanks-for-cruizing-container {
+        color:inherit;
+        position: relative;
+        line-height: 130%;
+        display: inline-block;
+        max-width: 100%;
+        z-index: 1;
+      }
+      .boatcruize-aerodrome-estate {
+        color:inherit;
+        position: relative;
+        font-size: 15.3px;
+        line-height: 130%;
+        z-index: 1;
+      }
+      .boatcruize-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 22px 0px;
+        max-width: 100%;
+        color:inherit
+      }
+      .logo-rectangle {
+        width: 840px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        max-width: 100%;
+        gap: 20px;
+      }
+      .line-separator {
+        width: 1046px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        max-width: 100%;
+        flex-shrink: 0;
+      }
+      .hi-frame {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 21px 0px;
+        max-width: 100%;
+        text-align: left;
+        font-size: 32px;
+        color: inherit;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .logo-frame {
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 64px 25px 43px 26px;
+        box-sizing: border-box;
+        gap: 32px 0px;
+        letter-spacing: normal;
+        color:#333;
+      }
+
+      .darkMode{
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+        background-color: #333;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 64px 25px 43px 26px;
+        box-sizing: border-box;
+        gap: 32px 0px;
+        letter-spacing: normal;
+        color:#fff;
+      }
+
+      @media screen and (min-width:750) and (max-width: 1200px) {
+
+        .boatcruize {
+          font-size: 26px;
+          line-height: 26px;
+        }
+
+        .reminder {
+          font-size: 38px;
+          line-height: 50px;
+        }
+
+        .thanks-for-cruizing-container {
+          font-size: 26px;
+          line-height: 33px;
+        }
+
+        .logo-rectangle {
+          flex-wrap: wrap;
+        }
+
+        .logo-frame {
+          gap: 32px 0px;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        .boatcruize-logo-icon{
+          height:70%;
+          width:70%;
+          left:300px;
+          top:190px;
+        }
+
+        .boatcruize-logo-icon2{
+          visibility: collapse;
+        }
+        .boatcruize {
+          font-size: 19px;
+          line-height: 19px;
+        }
+
+        .reminder {
+          font-size: 29px;
+          line-height: 37px;
+        }
+
+        .label-frame {
+          gap: 35px 0px;
+        }
+
+        .hi-balogun-tobi {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boat-owners-details {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .name {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .contact {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boat {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boat-frame {
+          flex: 1;
+        }
+
+        .owners-name {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .div {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boat-name {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boat-frame1 {
+          flex: 1;
+        }
+
+        .contact-frame {
+          flex-wrap: wrap;
+        }
+
+        .trip-details {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .starttime {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .endtime {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .duration {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .no-of-invitees {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .start-end-duration-frame {
+          flex: 1;
+        }
+
+        .hrs-display {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .hrs-display1 {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .hours {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .boatcruize-reminder {
+          font-size: 19px;
+          line-height: 25px;
+        }
+
+        .hours-frame {
+          margin-left: 0;
+        }
+
+        .thanks-for-cruizing-container {
+          font-size: 17px;
+          line-height: 25px;
+          left:-20px;
+        }
+
+        .boatcruize-aerodrome-estate{
+          width: 150%;
+          left:-10px;
+          
+        }
+      }
+
+      @media screen and (max-width: 395px){
+        .boatcruize-logo-icon{
+          height:70%;
+          width:70%;
+        }
+
+        .hi-balogun-tobi{
+          font-size: 17px;
+          line-height: 25px;
+        }
+
+        .boat-owners-details,.name,.contact,.boat,.owners-name,.div,.boat-name{
+          font-size: 17px;
+          line-height: 25px;
+        }
+
+        .trip-details,.starttime,.endtime,.duration,.no-of-invitees,.hours-frame,.hrs-display,.hrs-display1,.hours,.boatcruize-reminder{
+          font-size: 17px;
+          line-height: 25px;
+        }
+
+        .hours-frame{
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 12px 0px;
+          min-width: 151px;
+          margin-left: -42px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="logo-frame" id="light">
+      <div class="here">Click here</div>
+      <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496"><path fill="currentColor" d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z" transform="translate(-8 -8)"/></svg>
+      </button>
+      <div class="wrapper-boatcruize-logo">
+        <img
+          class="boatcruize-logo-icon"
+          alt=""
+          src="./Images/boatcruize-logo@2x.png"
+        />
+      </div>
+      <section class="label-frame-wrapper">
+        <div class="label-frame">
+          <div class="details-frame">
+            <img
+              class="boatcruize-logo-icon1"
+              loading="lazy"
+              alt=""
+              src="./Images/boatcruize-logo1@2x.png"
+            />
+
+            <div class="boatcruize"><b>Boatcruize</b></div>
+          </div>
+          <h1 class="reminder"><b>REMINDER!!!</b></h1>
+        </div>
+      </section>
+      <section class="info-frame">
+        <div class="hi-balogun-tobi">
+          Hi, Balogun Tobi, this is to remind you that your one a kind boat
+          cruize is happening tomorrow
+        </div>
+      </section>
+      <section class="name-contact-frame-wrapper">
+        <div class="name-contact-frame">
+          <div class="boat-owners-details"><b>Boat Owner’s Details:</b></div>
+          <div class="contact-frame">
+            <div class="boat-frame">
+              <div class="name">Name:</div>
+              <div class="contact">Contact:</div>
+              <div class="boat">Boat:</div>
+            </div>
+            <div class="boat-frame1">
+              <div class="owners-name">Owner’s Name</div>
+              <div class="div">081666682611</div>
+              <div class="boat-name">Boat Name</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="line-frame-wrapper">
+        <div class="line-frame">
+          <div class="trip-details"><b>Trip details:</b></div>
+          <div class="trip-details-frame">
+            <div class="start-end-duration-frame">
+              <div class="starttime">StartTime:</div>
+              <div class="endtime">EndTime:</div>
+              <div class="duration">Duration:</div>
+              <div class="no-of-invitees">No. of Invitees</div>
+            </div>
+            <div class="hours-frame">
+              <div class="hrs-display">2024-01-05 15:00</div>
+              <div class="hrs-display1">2024-01-05 17:00</div>
+              <div class="hours">2 hours</div>
+              <div class="empty-frame">
+                <div class="boatcruize-reminder">5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hi-frame">
+        <div class="owner-details-frame"></div>
+        <div class="line-separator">
+          <div class="logo-rectangle">
+            <div class="thanks-frame">
+              <img
+                class="boatcruize-logo-icon2"
+                loading="lazy"
+                alt=""
+                src="./Images/boatcruize-logo1@2x.png"
+              />
+            </div>
+            <div class="boatcruize-frame">
+              <div class="thanks-for-cruizing-container">
+                <span>Thanks for </span>
+                <span><b>cruizing</b></span>
+                <span> with us</span>
+              </div>
+              <div class="boatcruize-aerodrome-estate">
+                Boatcruize, Aerodrome Estate, Suite 1100, Samonda, Ibadan
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const light = document.getElementById('light');
+      const button=document.getElementById('dark-mode-toggle');
+
+      function enable() {
+        light.classList.remove("logo-frame");
+
+        light.classList.add("darkMode");
+
+        button.setAttribute("dark","yes")
+      }
+
+      function disable() {
+        light.classList.add("logo-frame");
+        light.classList.remove("darkMode");
+        button.setAttribute("dark","no")
+      }
+
+      function fireClick(event){
+        const darkCheck= event.currentTarget.getAttribute("dark");
+        const classCheck= event.currentTarget.getAttribute("class");
+        console.log(classCheck)
+        if(darkCheck!=="yes"){
+          enable()
+        }else{
+          disable()
+        }
+
+        console.log("after if-else block:", darkCheck)
+      }
+
+      document.getElementById('dark-mode-toggle').addEventListener("click", fireClick);
+    </script>
+  </body>
+</html>
